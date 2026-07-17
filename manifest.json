@@ -1,0 +1,18 @@
+{
+  "name": "S&D Express Booking",
+  "short_name": "S&D Express",
+  "description": "Transport booking and fleet management portal",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#0b1426",
+  "theme_color": "#0b1426",
+  "icons": [
+    {"src":"assets/icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}
+  ],
+  "shortcuts": [
+    {"name":"Book a trip","url":"booking/","icons":[{"src":"assets/icon.svg","sizes":"any","type":"image/svg+xml"}]},
+    {"name":"Track booking","url":"track/","icons":[{"src":"assets/icon.svg","sizes":"any","type":"image/svg+xml"}]}
+  ]
+}
