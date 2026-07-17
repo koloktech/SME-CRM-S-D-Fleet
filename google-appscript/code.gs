@@ -201,7 +201,12 @@ function audit_(user,action,entity,id,details){append_('AuditLog',{'Timestamp':i
 function notifyEvent_(event,payload){console.log('NOTIFICATION_EVENT '+event+' '+JSON.stringify(payload));/* Future adapters: MailApp, Telegram bot, WhatsApp provider. */}
 function output_(success,data,message,code){return ContentService.createTextOutput(JSON.stringify({success:success,data:data,message:message,code:code||null,timestamp:isoNow_()})).setMimeType(ContentService.MimeType.JSON);}
 function apiError_(message,code){var e=new Error(message);e.code=code;return e;}
-function key_(header){return header.charAt(0).toLowerCase()+header.slice(1).replace(/\s+(.)/g,function(_,c){return c.toUpperCase();});}
+function key_(header){
+  return String(header||'').trim().split(/\s+/).map(function(part,index){
+    part=part.toLowerCase();
+    return index===0 ? part : part.charAt(0).toUpperCase()+part.slice(1);
+  }).join('');
+}
 function pick_(obj,keys){var out={};keys.forEach(function(k){out[k]=obj[k];});return out;}
 function indexBy_(arr,key){var o={};arr.forEach(function(x){o[x[key]]=x;});return o;}
 function sum_(arr,key){return round2_(arr.reduce(function(n,x){return n+(Number(x[key])||0);},0));}

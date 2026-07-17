@@ -1,4 +1,4 @@
-const CACHE = 'sd-express-v1.0.1';
+const CACHE = 'sd-express-v1.0.4';
 const APP_SHELL = [
   './','./index.html','./booking/','./booking/index.html','./track/','./track/index.html',
   './admin/','./admin/index.html','./css/styles.css','./js/app.js','./js/booking.js',
