@@ -14,7 +14,7 @@
     if(url.hostname==='drive.google.com'){
      const fileMatch=url.pathname.match(/\/file\/d\/([^/]+)/);
      const id=(fileMatch&&fileMatch[1])||url.searchParams.get('id');
-     if(id)return `https://drive.google.com/uc?export=view&id=${encodeURIComponent(id)}`;
+     if(id)return `https://drive.google.com/thumbnail?id=${encodeURIComponent(id)}&sz=w1600`;
     }
     return url.href;
    }catch{return ''}
